@@ -8,16 +8,11 @@ quadrangle::quadrangle(int a, int b, int c, int d, int  A, int B, int C, int D,s
 
 	
 
-
-	
-
-	try {
-
-		if ((a == 0) || (b == 0) || (c == 0) || (d == 0)) { throw Exception("меньше четырех сторон"); }
-		if ((A == 0) || (B == 0) || (C == 0) || (D == 0)) { throw Exception("угол равен нулю"); }
-		if ((A < 0) || (B < 0) || (C < 0) || (D == 0)) { throw Exception("угол меньше нулю"); }
-		if ((a < 0) || (b < 0) || (c < 0) || (d == 0)) { throw Exception("отрицательная длина стороны"); }
-		if ((A + B + C + D) != 360) { throw Exception("сумма углов не равна 360"); }
+		if ((a == 0) || (b == 0) || (c == 0) || (d == 0)) { throw Exception(name + ". Причина: меньше четырех сторон"); }
+		if ((A == 0) || (B == 0) || (C == 0) || (D == 0)) { throw Exception(name + ". Причина: угол равен нулю"); }
+		if ((A < 0) || (B < 0) || (C < 0) || (D == 0)) { throw Exception(name + ". Причина: угол меньше нулю"); }
+		if ((a < 0) || (b < 0) || (c < 0) || (d == 0)) { throw Exception(name + ". Причина: отрицательная длина стороны"); }
+		if ((A + B + C + D) != 360) { throw Exception(name + ". Причина: сумма углов не равна 360"); }
 
 		check = "Четырехугольник";
 
@@ -29,14 +24,6 @@ quadrangle::quadrangle(int a, int b, int c, int d, int  A, int B, int C, int D,s
 			print_info();
 		}
 
-
-	}
-
-	catch (const Exception& ex) {
-
-		std::cout << "Ошибка создания фигуры " << name << ". Причина: " << ex.what() << std::endl;
-		std::cout << std::endl;
-	}
 
 
 }

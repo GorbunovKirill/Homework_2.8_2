@@ -5,16 +5,12 @@
 
 triangle::triangle(int a, int b, int c, int  A, int B, int C,std::string name) :figure(a,b,c,d,A,B,C,D, name){
 
-	
-	
-
-	try {
 		
-		if ((a == 0) || (b == 0) || (c == 0)) { throw Exception("меньше четырех сторон"); }
-		if ((A == 0) || (B == 0) || (C == 0)) { throw Exception("угол равен нулю"); }
-		if ((A < 0) || (B < 0) || (C < 0)) { throw Exception("угол меньше нуля"); }
-		if ((a < 0) || (b < 0) || (c < 0)) { throw Exception("отрицательная длина стороны"); }
-		if ((A + B + C) != 180) { throw Exception("сумма углов не равна 180"); }
+		if ((a == 0) || (b == 0) || (c == 0)) { throw Exception(name + ". Причина: меньше четырех сторон"); }
+		if ((A == 0) || (B == 0) || (C == 0)) { throw Exception(name + ". Причина: угол равен нулю"); }
+		if ((A < 0) || (B < 0) || (C < 0)) { throw Exception(name + ". Причина: угол меньше нуля"); }
+		if ((a < 0) || (b < 0) || (c < 0)) { throw Exception(name + ". Причина: отрицательная длина стороны"); }
+		if ((A + B + C) != 180) { throw Exception(name+". Причина: сумма углов не равна 180"); }
 
 		check = "Треугольник";
 
@@ -27,15 +23,6 @@ triangle::triangle(int a, int b, int c, int  A, int B, int C,std::string name) :
 
 	}
 
-
-}
-
-
-catch (const Exception& ex) {
-
-	std::cout << "Ошибка создания фигуры " << name << ". Причина: " << ex.what() << std::endl;
-	std::cout << std::endl;
-}
 
 }
 
